@@ -19,7 +19,7 @@
       <div id="pmfErcFrame" style="width: 100%">
         <script>
           let script = document.createElement('script');
-          script.src = `http://localhost:4000/api/erc-iframe?referralId=${window.location.pathname}`;
+          script.src = `http://localhost:4000/api/erc-iframe?referralId=${window.location.search}`;
           document.body.append(script);
         </script>
       </div>
