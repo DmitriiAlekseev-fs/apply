@@ -9,20 +9,36 @@
         justify-content: center;
         padding: 100px;
       }
-      iframe {
-        border: none;
-      }
     </style>
   </head>
-   <body>
+  <body>
     <div class="wrapper">
       <div id="pmfErcFrame" style="width: 100%">
+        <div>
+          <label>
+            Referral id: (on Tab click)
+            <input type="text" id="temp-input" />
+          </label>
+        </div>
         <script>
           let script = document.createElement('script');
           script.src = `http://localhost:4000/api/erc-iframe?referralId=${window.location.hash?.slice(1)}`;
-          document.body.append(script);
+          document.body.append(script); // TODO: for testing only. After test return as <script src="http://localhost:4000/api/erc-iframe?referralId=dmitry"><script>
+        </script>
+        <script>
+          const input = document.getElementById('temp-input');
+          const inputSubmitHandler = function (event) {
+            window.location.hash = event.target.value;
+            window.location.reload();
+          };
+          input.addEventListener('blur', inputSubmitHandler);
+          window.addEventListener('beforeunload', (ev) => {
+            ev.preventDefault();
+           input.removeEventListener('blur', inputSubmitHandler)
+          });
         </script>
       </div>
     </div>
   </body>
 </html>
+
