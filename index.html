@@ -15,14 +15,16 @@
     <div class="wrapper">
       <div id="pmfErcFrame" style="width: 100%">
         <div>
+          <p></p>
           <label>
-            Referral id: (on Tab click)
+            Referral id: (on Tab click). For testing only
+            </br>
             <input type="text" id="temp-input" />
           </label>
         </div>
         <script>
           let script = document.createElement('script');
-          script.src = `http://localhost:4000/api/erc-iframe?referralId=${window.location.hash?.slice(1)}`;
+          script.src = `https://apply.myrmappdev.com/erc/api/erc-iframe?referralId=${window.location.hash?.slice(1)}`;
           document.body.append(script); // TODO: for testing only. After testing, we will return as it was before <script src="http://localhost:4000/api/erc-iframe?referralId=dmitry"><script>
         </script>
         <script>
