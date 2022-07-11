@@ -22,23 +22,7 @@
             <input type="text" id="temp-input" />
           </label>
         </div>
-        <script>
-          let script = document.createElement('script');
-          script.src = `https://apply.myrmappdev.com/api/erc-iframe?referralId=${window.location.hash?.slice(1)}`;
-          document.body.append(script); // TODO: for testing only. After testing, we will return as it was before <script src="http://localhost:4000/api/erc-iframe?referralId=dmitry"><script>
-        </script>
-        <script>
-          const input = document.getElementById('temp-input');
-          const inputSubmitHandler = function (event) {
-            window.location.hash = event.target.value;
-            window.location.reload();
-          };
-          input.addEventListener('blur', inputSubmitHandler);
-          window.addEventListener('beforeunload', (ev) => {
-            ev.preventDefault();
-           input.removeEventListener('blur', inputSubmitHandler)
-          });
-        </script>
+        <script src="http://localhost:4000/api/erc-iframe"></script>
       </div>
     </div>
   </body>
