@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>pmfErcFrame</title>
+    <title>pmfSingleApplyFrame</title>
     <style>
       .wrapper {
         display: flex;
+        align-items: center;
         justify-content: center;
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <div data-terms-of-service-url="https://google.com" id="pmfErcFrame" style="width: 100%; height: 100vh">
-        <script src="http://localhost:4000/api/erc-iframe"></script>
+      <div data-terms-of-service-url="https://google.com" id="pmfApplyFrame" style="width: 100%">
+        <script src="http://localhost:3000/api/v1/single-apply-iframe.js?referralId=ren-sp"></script>
       </div>
     </div>
   </body>
